@@ -1,40 +1,38 @@
 # assembly-mipinho
-Interpretador de instruções Assembly MIPS em alto nível desenvolvido
-em Java para o projeto final da disciplina de Fundamentos de Sistemas de Computação,
-do Mestrado Profissional em Engenharia de Software IMD/UFRN 2016.1.
+High level interpreter of Assembly MIPS instructions developed in Java for a project at the university.
 
 ##############################
-Detalhamento do projeto:
+Project details:
 
-* res/ -> Arquivos .asm
+* res/ -> Files .asm
 
 PACKAGES: assembly.mips.simulator
 MAIN:  -->> .interpreter <<--
 
 * .address
-  - IPHandler              -> Armazena os endereços IPs das máquinas;
+  - IPHandler              -> Stores the IP addrress of the machines;
 
 * .code
-  - Data                   -> Simulação alto nível de um Data Segment;
-  - Instruction            -> Simulação alto nível de uma instrução;
-  - Label                  -> Simulação alto nível de um label;
-  - MipinhoReader          -> Leitor de código Assembly MIPS (organiza os labels e instruções);
+  - Data                   -> High level simulator of a Data Segment;
+  - Instruction            -> High level simulator of an instruction;
+  - Label                  -> High level simulator of a label;
+  - MipinhoReader          -> Assembly MIPS code reader (manage the labels and instructions);
 
 * .hardware
-  - DataRegisters          -> Hash e manipulador de Data Segment;
-  - InstructionRegisters   -> Hash e manipulador de instruções;
-  - LabelRegisters         -> Hash e manipulador de Labels;
-  - Register               -> Simulador alto nível de um registro ($s1, $s2);
-  - Registers              -> Hash e manipulador de registros;
+  - DataRegisters          -> Hash and manipulator of the Data Segment;
+  - InstructionRegisters   -> Hash and manipulator of the instructions;
+  - LabelRegisters         -> Hash and manipulator of the Labels;
+  - Register               -> High level simulator of a register ($s1, $s2);
+  - Registers              -> Hash and manipulator of the registers;
 
 * .instruction
-  - InstructionHandler     -> Recebe a solicitação de cada instrução e designa a tarefa para a classe correta;
-  - ParamHandler           -> Trata e retorna os parametros para que as instruções possam executar;
-  - PRINT                  -> Exibi o calor contido em um registrador (PRINT $s1);
-  - (AS OUTRAS CLASSES REPRESENTAM INSTRUÇÕES ASSEMBLY MIPS);
+  - InstructionHandler     -> Handle the instructions and instanciate the apropriate class;
+  - ParamHandler           -> Handle and return the parameters so the instructions can be executed;
+  - PRINT                  -> Prints a value of a register (PRINT $s1);
+  - (THE OTHER CLASSES ARE Assembly MIPS instructions);
 
 * .interpreter
-  - MipinhoInterpreter     -> Faz a manipulação das instruções, e solicita a execução das mesmas;
+  - MipinhoInterpreter     -> Manipulate the instructions, and executes the instructions;
 
 * .socket
-  - MipinhoSocket          -> Manipulador de Sockets;
+  - MipinhoSocket          -> Sockets manipulator;
